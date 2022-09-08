@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import WrapperForm from "../FormStyle";
 
 export default function Forms({ type }) {
   const [formLogin, setFormLogin] = useState({ email: "", password: "" });
@@ -96,37 +97,5 @@ const Wrapper = styled.div`
     margin-top: 30px;
     color: white;
     font-weight: 500;
-  }
-`;
-
-const WrapperForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  input {
-    display: flex;
-    min-width: 87vw;
-    height: 58px;
-    padding-left: 10px;
-    border-radius: 5px;
-    border: none;
-    margin-bottom: 8px;
-    font-size: 20px;
-    font-family: "Raleway", sans-serif;
-
-    ::placeholder {
-      color: black;
-    }
-  }
-  button {
-    font-family: "Raleway", sans-serif;
-    width: 87vw;
-    height: 40px;
-    background-color: #a328d6;
-    font-size: 20px;
-    font-weight: 700;
-    color: white;
-    border: none;
   }
 `;

@@ -16,8 +16,11 @@ export default function App() {
             <Route path="/sign-in" element={<InitialPage type="login" />} />
             <Route path="/sign-up" element={<InitialPage type="cadastro" />} />
             <Route path="/main" element={<MainPage />} />
-            <Route path="/main/newIn" element={<RegisterNew type={"in"} />} />
-            <Route path="/main/newOut" element={<RegisterNew type={"out"} />} />
+            <Route path="/main/add/in" element={<RegisterNew type={"in"} />} />
+            <Route
+              path="/main/add/out"
+              element={<RegisterNew type={"out"} />}
+            />
           </Routes>
         </BrowserRouter>
       </Wrapper>
