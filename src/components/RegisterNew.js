@@ -13,12 +13,15 @@ export default function RegisterNew({ type }) {
   function handleForm(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
-  function submitForm(e) {
+  async function submitForm(e) {
     e.preventDefault();
 
-    postRegister(form)
-      .then(() => navigate("/main"))
-      .catch((erro) => console.log(erro));
+    try {
+      await postRegister(form);
+      navigate("/main");
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (

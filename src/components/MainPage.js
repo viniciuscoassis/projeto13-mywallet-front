@@ -16,19 +16,6 @@ export default function MainPage() {
   useEffect(() => {
     PegarRegistros();
   }, []);
-  // let selected;
-  // for (let i = 0; i < arrayRegisters.length; i++) {
-  //   // let mes = arrayRegisters.date[i].split("/")[1];
-  //   let dia = Number(arrayRegisters[i].date.split("/")[0]);
-  //   selected = i;
-  //   for (let j = i + 1; j < arrayRegisters.length; j++) {
-  //     // let mesJ = arrayRegisters.date[j].split("/")[1];
-  //     let diaJ = Number(arrayRegisters[j].date.split("/")[0]);
-  //     if (diaJ <= dia) {
-  //       selected = j;
-  //     }
-  //   }
-  // }
 
   const arrOut = arrayRegisters.filter((value) => value.type === "out");
   const arrIn = arrayRegisters.filter((value) => value.type === "in");
@@ -42,7 +29,6 @@ export default function MainPage() {
     .reduce((prev, curr) => prev + curr, 0);
 
   const saldo = sumIn - sumOut;
-  console.log(saldo);
 
   return (
     <Wrapper>

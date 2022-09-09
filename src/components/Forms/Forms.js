@@ -1,9 +1,12 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import WrapperForm from "../FormStyle";
+import { postLogin, postSignUp } from "../../services/mywallet";
 
 export default function Forms({ type }) {
+  const navigate = useNavigate();
+
   const [formLogin, setFormLogin] = useState({ email: "", password: "" });
   const [formSignUp, setFormSignUp] = useState({
     name: "",
@@ -19,11 +22,18 @@ export default function Forms({ type }) {
   }
   function submitLoginForm(e) {
     e.preventDefault();
-    console.log(formLogin);
+    postLogin(formLogin).then((res) => {
+      localStorage.setItem(
+        "mywallet",
+        JSON.stringify({ token: res.data, timestamp: +new Date() })
+      );
+    });
+    navigate("/main");
   }
   function submitSignUpForm(e) {
     e.preventDefault();
-    console.log(formSignUp);
+    postSignUp(formSignUp).then((res) => alert("Cadastrado com sucesso"));
+    navigate("/");
   }
 
   return (
