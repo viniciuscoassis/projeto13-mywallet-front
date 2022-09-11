@@ -1,13 +1,15 @@
 import styled from "styled-components";
 import { AddCircleOutline, RemoveCircleOutline } from "react-ionicons";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Header from "./Header";
 import { getRegisters } from "../services/mywallet";
 import { useNavigate } from "react-router-dom";
+import UserContext from "../Contexts/UserContext.js";
 
-export default function MainPage() {
+export default function MainPage({}) {
   const navigate = useNavigate();
 
+  const { userInfo } = useContext(UserContext);
   const [arrayRegisters, setArrayRegisters] = useState([]);
 
   async function PegarRegistros() {
@@ -32,7 +34,7 @@ export default function MainPage() {
 
   return (
     <Wrapper>
-      <Header title="Olá, Fulano" type="goToLogin" />
+      <Header title={`Olá, ${userInfo.name}`} type="goToLogin" />
 
       <Registers>
         {arrayRegisters.length === 0 ? (

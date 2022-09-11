@@ -11,7 +11,7 @@ export default function PrivatePage({ children }) {
   if (auth) {
     const then = auth.timestamp;
     const now = +new Date();
-    if (now - then < 1000 * 60) {
+    if (now - then < 1000 * 60 * 30) {
       return <>{children}</>;
     } else {
       localStorage.clear();
