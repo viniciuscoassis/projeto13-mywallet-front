@@ -22,18 +22,28 @@ export default function Forms({ type }) {
   }
   function submitLoginForm(e) {
     e.preventDefault();
-    postLogin(formLogin).then((res) => {
-      localStorage.setItem(
-        "mywallet",
-        JSON.stringify({ token: res.data, timestamp: +new Date() })
-      );
-    });
-    navigate("/main");
+    postLogin(formLogin)
+      .then((res) => {
+        localStorage.setItem(
+          "mywallet",
+          JSON.stringify({ token: res.data, timestamp: +new Date() })
+        );
+        navigate("/main");
+      })
+      .catch((error) => {
+        alert(error.response.data);
+      });
   }
   function submitSignUpForm(e) {
     e.preventDefault();
-    postSignUp(formSignUp).then((res) => alert("Cadastrado com sucesso"));
-    navigate("/");
+    postSignUp(formSignUp)
+      .then((res) => {
+        alert("Cadastrado com sucesso");
+        navigate("/");
+      })
+      .catch((error) => {
+        alert(error.response.data);
+      });
   }
 
   return (
@@ -53,6 +63,7 @@ export default function Forms({ type }) {
               name="password"
               onChange={handleFormLogin}
               value={formLogin.password}
+              type="password"
             ></input>
             <button type="submit">Login</button>
           </WrapperForm>
