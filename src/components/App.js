@@ -1,12 +1,12 @@
-import InitialPage from "./InitialPage";
+import InitialPage from "./authPage/InitialPage";
 import styled from "styled-components";
 import GlobalStyle from "../assets/globalStyles";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MainPage from "./MainPage";
-import RegisterNew from "./RegisterNew";
-import PrivatePage from "./PrivatePage";
+import MainPage from "./mainPage/MainPage";
+import RegisterNew from "./mainPage/RegisterNew";
+import PrivatePage from "./privatePage/PrivatePage.js";
 import { useState } from "react";
-import UserContext from "../Contexts/UserContext.js";
+import UserContext from "../contexts/UserContext.js";
 
 export default function App() {
   const [userInfo, setUserInfo] = useState({});

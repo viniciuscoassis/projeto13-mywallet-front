@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { postRegister } from "../services/mywallet";
-import WrapperForm from "./FormStyle";
-import Header from "./Header";
+import { postRegister } from "../../services/mywallet";
+import WrapperForm from "../templates/FormStyle";
+import Header from "../templates/Header";
 
 export default function RegisterNew({ type }) {
   const [form, setForm] = useState({ type, value: "", description: "" });

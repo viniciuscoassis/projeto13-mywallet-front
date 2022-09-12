@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { AddCircleOutline, RemoveCircleOutline } from "react-ionicons";
 import { useContext, useEffect, useState } from "react";
-import Header from "./Header";
-import { getRegisters } from "../services/mywallet";
+import Header from "../templates/Header";
+import { getRegisters } from "../../services/mywallet";
 import { useNavigate } from "react-router-dom";
-import UserContext from "../Contexts/UserContext.js";
+import UserContext from "../../contexts/UserContext.js";
 
 export default function MainPage() {
   const navigate = useNavigate();

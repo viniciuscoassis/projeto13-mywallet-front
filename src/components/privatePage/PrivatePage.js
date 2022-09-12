@@ -1,4 +1,4 @@
-import BlockedPage from "./blockedPage";
+import BlockedPage from "../templates/blockedPage.js";
 
 export default function PrivatePage({ children }) {
   const auth = JSON.parse(localStorage.getItem("mywallet"));

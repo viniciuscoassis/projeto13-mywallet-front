@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-import WrapperForm from "../FormStyle";
+import WrapperForm from "../templates/FormStyle.js";
 import { postLogin, postSignUp } from "../../services/mywallet";
-import UserContext from "../../Contexts/UserContext";
+import UserContext from "../../contexts/UserContext";
 
 export default function Forms({ type }) {
   const { setUserInfo } = useContext(UserContext);
@@ -16,7 +16,7 @@ export default function Forms({ type }) {
     password: "",
     confirmPassword: "",
   });
-  console.log(formSignUp);
+
   function handleFormLogin(e) {
     setFormLogin({ ...formLogin, [e.target.name]: e.target.value });
   }

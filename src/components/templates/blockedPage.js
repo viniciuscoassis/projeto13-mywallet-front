@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import WrapperForm from "./FormStyle";
+import WrapperForm from "./FormStyle.js";
 import { ReturnDownBackOutline, SadOutline } from "react-ionicons";
 import { useNavigate } from "react-router-dom";
 

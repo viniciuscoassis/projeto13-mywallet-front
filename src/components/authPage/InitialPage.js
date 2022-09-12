@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Forms from "./Forms/Forms";
+import Forms from "./Forms";
 
 export default function InitialPage({ type }) {
   return (
