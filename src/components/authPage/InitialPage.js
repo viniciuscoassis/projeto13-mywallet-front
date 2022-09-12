@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Forms from "./Forms";
+import Forms from "./authForms.js";
 
 export default function InitialPage({ type }) {
   return (
