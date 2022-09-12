@@ -14,8 +14,9 @@ export default function Forms({ type }) {
     name: "",
     email: "",
     password: "",
+    confirmPassword: "",
   });
-
+  console.log(formSignUp);
   function handleFormLogin(e) {
     setFormLogin({ ...formLogin, [e.target.name]: e.target.value });
   }
@@ -100,8 +101,15 @@ export default function Forms({ type }) {
               name="password"
               value={formSignUp.password}
               onChange={handleFormSignUp}
+              type="password"
             ></input>
-            <input placeholder="Confirme a senha"></input>
+            <input
+              placeholder="Confirme a senha"
+              name="confirmPassword"
+              value={formSignUp.confirmPassword}
+              onChange={handleFormSignUp}
+              type="password"
+            ></input>
             <button type="submit">Cadastrar</button>
           </WrapperForm>
           <h3>

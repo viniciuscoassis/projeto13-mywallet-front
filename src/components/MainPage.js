@@ -6,7 +6,7 @@ import { getRegisters } from "../services/mywallet";
 import { useNavigate } from "react-router-dom";
 import UserContext from "../Contexts/UserContext.js";
 
-export default function MainPage({}) {
+export default function MainPage() {
   const navigate = useNavigate();
 
   const { userInfo } = useContext(UserContext);

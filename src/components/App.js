@@ -10,7 +10,7 @@ import UserContext from "../Contexts/UserContext.js";
 
 export default function App() {
   const [userInfo, setUserInfo] = useState({});
-  console.log(userInfo);
+
   return (
     <>
       <GlobalStyle />
